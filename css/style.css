@@ -1,0 +1,163 @@
+/* ===== 1. VARIABLES: colors and fonts in one place ===== */
+:root {
+  --cream: #f0eadf;
+  --black: #1a1a18;
+  --lime: #c8f04a;
+  --orange: #e8552b;
+  --white: #ffffff;
+}
+
+/* ===== 2. RESET: remove browser default spacing ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--cream);
+  color: var(--black);
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { background: none; border: none; color: inherit; cursor: pointer; }
+
+/* ===== 3. TOP BAR ===== */
+.topbar {
+  background: var(--black);
+  color: var(--white);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;                    /* puts the 3 texts in a row */
+  justify-content: space-between;   /* spreads them left / middle / right */
+  padding: 8px 40px;
+}
+
+.topbar-highlight { color: var(--lime); }
+
+/* ===== 4. NAVBAR ===== */
+.site-header {
+  background: var(--cream);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;              /* centers everything vertically */
+  padding: 14px 40px;
+  position: sticky;                 /* stays at the top while scrolling */
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-links a:hover { color: var(--orange); }
+
+/* Keyboard users need to see where they are */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.header-icons {
+  display: flex;
+  gap: 18px;
+}
+
+.cart-btn { position: relative; }
+
+.cart-badge {
+  position: absolute;               /* sits on the corner of the cart icon */
+  top: -8px;
+  right: -10px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+}
+
+/* ===== 5. HERO ===== */
+.hero {
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  color: var(--white);
+  /* dark gradient on the left keeps the white text readable, then the photo */
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 70%),
+    url("../assets/images/hero.jpg") center / cover no-repeat;
+}
+
+.hero-content { max-width: 640px; }
+
+.eyebrow {
+  color: var(--lime);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 9vw, 96px);   /* shrinks on small screens */
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.hero-text {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;                  /* buttons stack if there's no room */
+}
+
+/* ===== 6. BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 16px 28px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.btn-lime { background: var(--lime); color: var(--black); }
+.btn-outline { border: 2px solid var(--white); color: var(--white); }
+.btn:hover { opacity: 0.85; }
+
+/* ===== 7. RESPONSIVE: phones and small tablets ===== */
+@media (max-width: 768px) {
+  .topbar { justify-content: center; padding: 8px 16px; }
+  .topbar p:not(.topbar-highlight) { display: none; }  /* keep only the middle text */
+
+  .site-header { padding: 14px 16px; }
+  .nav-links { display: none; }     /* temporary: we'll add a hamburger menu later */
+
+  .hero { padding: 0 16px; min-height: 460px; }
+}
