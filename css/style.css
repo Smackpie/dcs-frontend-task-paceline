@@ -1,5 +1,6 @@
 /* ===== 1. VARIABLES: colors and fonts in one place ===== */
-:root {
+:root 
+{
   --cream: #f0eadf;
   --black: #1a1a18;
   --lime: #c8f04a;
@@ -8,13 +9,15 @@
 }
 
 /* ===== 2. RESET: remove browser default spacing ===== */
-* {
+* 
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+body 
+{
   font-family: 'Inter', Arial, sans-serif;
   background: var(--cream);
   color: var(--black);
@@ -25,7 +28,8 @@ ul { list-style: none; }
 button { background: none; border: none; color: inherit; cursor: pointer; }
 
 /* ===== 3. TOP BAR ===== */
-.topbar {
+.topbar 
+{
   background: var(--black);
   color: var(--white);
   font-size: 11px;
@@ -39,7 +43,8 @@ button { background: none; border: none; color: inherit; cursor: pointer; }
 .topbar-highlight { color: var(--lime); }
 
 /* ===== 4. NAVBAR ===== */
-.site-header {
+.site-header 
+{
   background: var(--cream);
   display: flex;
   justify-content: space-between;
@@ -50,10 +55,17 @@ button { background: none; border: none; color: inherit; cursor: pointer; }
   z-index: 10;
 }
 
-.logo {
+.logo 
+{
   font-weight: 900;
   font-size: 20px;
   letter-spacing: 0.08em;
+}
+
+.logo img {
+  display: block;   /* removes the small gap browsers add under images */
+  height: 32px;
+  width: auto;      /* keeps the proportions */
 }
 
 .nav-links {
