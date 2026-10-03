@@ -411,12 +411,74 @@ a:focus-visible, button:focus-visible {
   text-transform: uppercase;
   color: #b9b5a8;
 }
+/* ===== 13. MEN'S / WOMEN'S ===== */
+.gender-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;     /* two equal cards */
+  gap: 16px;
+}
+
+.gender-card {
+  position: relative;                 /* anchor for the overlay and text */
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.gender-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gender-card:hover img { transform: scale(1.04); }
+
+/* Dark fade so the white text stays readable */
+.gender-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 60%);
+}
+
+.gender-info {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+  z-index: 1;                         /* in front of the fade */
+}
+
+.gender-info h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.gender-info p {
+  font-size: 14px;
+  margin: 8px 0 14px;
+}
+
+.gender-shop {
+  color: var(--lime);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
 
 /* for people who turn off animations in their system settings */
 @media (prefers-reduced-motion: reduce) {
-  .category-card img { transition: none; }
-  .category-card:hover img { transform: none; }
+  .category-card img,
+  .gender-card img { transition: none; }
+  .category-card:hover img,
+  .gender-card:hover img { transform: none; }
 }
+
 /* ===== Responsive: tablet and phone ===== */
 @media (max-width: 1024px) {
   .category-grid { grid-template-columns: repeat(2, 1fr); } 
@@ -431,9 +493,11 @@ a:focus-visible, button:focus-visible {
   .section { padding: 56px 16px; }
   .category-grid { grid-template-columns: 1fr; }              /* 1 column */
   .category-card { aspect-ratio: 4 / 3; }   
-   .product-grid { gap: 12px; }          /* stays 2 columns on phones */
+  .product-grid { gap: 12px; }          /* stays 2 columns on phones */
   .filter-pills { width: 100%; overflow-x: auto; flex-wrap: nowrap; }  /* pills scroll sideways */
   .pill { white-space: nowrap; }        /* keep each label on one line */                  /* shorter cards on phones */
   .story-content { padding: 48px 16px; }
   .story-stats { gap: 24px; flex-wrap: wrap; }
+  .gender-grid { grid-template-columns: 1fr; }   /* stack the cards on phones */
+  .gender-info { left: 16px; right: 16px; bottom: 16px; }
 }
