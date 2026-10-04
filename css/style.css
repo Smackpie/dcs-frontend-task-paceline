@@ -6,6 +6,7 @@
   --lime: #c8f04a;
   --orange: #e8552b;
   --white: #ffffff;
+  --orange-dark: #b8401c;   
 }
 
 /* ===== 2. RESET: remove browser default spacing ===== */
@@ -763,6 +764,110 @@ a:focus-visible, button:focus-visible {
   color: #4a4a46;
 }
 
+/* ===== 20. ABOUT PAGE: VISIT US ===== */
+.visit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;      /* text left, map right */
+  background: var(--black);
+  color: var(--white);
+}
+
+.visit-info {
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;              /* stack heading, address, hours */
+  justify-content: center;             /* centered vertically */
+}
+
+.visit .section-label { color: var(--lime); }
+
+.visit address {
+  font-style: normal;                  /* turns off the default italics */
+  font-size: 16px;
+  line-height: 1.7;
+  color: #d8d4c8;
+  margin: 24px 0;
+}
+
+.hours {
+  max-width: 320px;
+  font-size: 14px;
+}
+
+.hours div {
+  display: flex;
+  justify-content: space-between;      /* day on the left, time on the right */
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hours dt { color: #b9b5a8; }
+.hours dd { font-weight: 600; }
+
+.visit-map { min-height: 420px; }
+
+.visit-map img {
+  display: block;
+  width: 100%;
+  height: 100%;                /* fills the right half */
+  min-height: 420px;
+  object-fit: cover;           /* crops instead of stretching */
+}
+
+/* ===== 21. ABOUT PAGE: FOUNDERS ===== */
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.founder-card { background: var(--white); }
+
+.founder-media {
+  position: relative;                  /* anchor for the badge */
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.founder-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pill-badge {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  background: var(--lime);
+  color: var(--black);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;                /* pill shape, like the filter buttons */
+}
+
+.founder-body { padding: 28px; }
+
+.founder-body h3 {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.founder-role {
+  color: var(--orange-dark);
+  font-size: 13px;
+  font-weight: 700;
+  margin: 4px 0 14px;
+}
+
+.founder-body p:not(.founder-role) {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4a4a46;
+}
+
 /* ===== Responsive: tablet and phone ===== */
 @media (max-width: 1024px) {
   .category-grid { grid-template-columns: repeat(2, 1fr); } 
@@ -774,6 +879,9 @@ a:focus-visible, button:focus-visible {
   .footer-brand { grid-column: 1 / -1; }                    /* brand spans the full row */
   .split { grid-template-columns: 1fr; gap: 24px; }   /* stack heading above text */
   .timeline { grid-template-columns: repeat(2, 1fr); }   /* 2 per row */
+  .visit { grid-template-columns: 1fr; }        /* map goes under the text */
+  .visit-info { padding: 56px 40px; }
+  .visit-map, .visit-map img { min-height: 320px; }
 
 }
 
@@ -796,4 +904,7 @@ a:focus-visible, button:focus-visible {
   .value-grid { grid-template-columns: 1fr; }            /* cards stack */
   .value-card { padding: 24px; }
   .timeline { grid-template-columns: 1fr; gap: 28px; }   /* years stack */
+  .visit-info { padding: 48px 16px; }
+  .founder-grid { grid-template-columns: 1fr; } /* founder cards stack */
+  .founder-body { padding: 20px; }
 }
