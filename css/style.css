@@ -867,6 +867,43 @@ a:focus-visible, button:focus-visible {
   line-height: 1.7;
   color: #4a4a46;
 }
+/* ===== 22. CALL TO ACTION BAND ===== */
+.cta {
+  background: var(--lime);
+  color: var(--black);
+  text-align: center;
+  padding: 96px 40px;
+}
+
+.cta-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.cta h2 {
+  max-width: 14ch;                    /* forces the headline onto about two lines */
+  margin: 16px auto 32px;             /* auto left/right centers the box */
+  font-size: clamp(40px, 8vw, 88px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;                    /* buttons stack if there's no room */
+}
+
+/* Two new button colors for light backgrounds */
+.btn-dark { background: var(--black); color: var(--white); }
+.btn-outline-dark { border: 2px solid var(--black); color: var(--black); }
+
+/* The orange focus ring is hard to see on lime, so use black here */
+.cta a:focus-visible { outline-color: var(--black); }
 
 /* ===== Responsive: tablet and phone ===== */
 @media (max-width: 1024px) {
@@ -907,4 +944,5 @@ a:focus-visible, button:focus-visible {
   .visit-info { padding: 48px 16px; }
   .founder-grid { grid-template-columns: 1fr; } /* founder cards stack */
   .founder-body { padding: 20px; }
+    .cta { padding: 64px 16px; }
 }
