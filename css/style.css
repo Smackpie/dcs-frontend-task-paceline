@@ -693,6 +693,76 @@ a:focus-visible, button:focus-visible {
 /* Highlight the current page in the navbar */
 .nav-links a[aria-current="page"] { font-weight: 800; }
 
+/* ===== 18. ABOUT PAGE: VALUES ===== */
+.values { background: #f7f3eb; }          /* slightly lighter band than the page */
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* three equal cards */
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.value-card {
+  background: var(--white);
+  padding: 32px;
+}
+
+.value-num {
+  display: block;
+  color: var(--orange);                   /* big text, so orange passes contrast */
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.value-card h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.value-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4a4a46;
+}
+
+/* ===== 19. ABOUT PAGE: TIMELINE ===== */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* four equal columns */
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.timeline li {
+  border-top: 2px solid var(--black);     /* the line above each year */
+  padding-top: 24px;
+}
+
+.timeline-year {
+  color: var(--orange);
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.timeline h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.timeline li p:not(.timeline-year) {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4a4a46;
+}
+
 /* ===== Responsive: tablet and phone ===== */
 @media (max-width: 1024px) {
   .category-grid { grid-template-columns: repeat(2, 1fr); } 
@@ -703,6 +773,8 @@ a:focus-visible, button:focus-visible {
   .footer-main { grid-template-columns: repeat(2, 1fr); }   /* 2 link columns */
   .footer-brand { grid-column: 1 / -1; }                    /* brand spans the full row */
   .split { grid-template-columns: 1fr; gap: 24px; }   /* stack heading above text */
+  .timeline { grid-template-columns: repeat(2, 1fr); }   /* 2 per row */
+
 }
 
 @media (max-width: 640px) {
@@ -721,4 +793,7 @@ a:focus-visible, button:focus-visible {
   .page-hero { padding: 32px 16px 36px; }
   .page-banner { padding: 0 16px; }
   .page-banner img { aspect-ratio: 4 / 3; }           /* taller crop on phones */
+  .value-grid { grid-template-columns: 1fr; }            /* cards stack */
+  .value-card { padding: 24px; }
+  .timeline { grid-template-columns: 1fr; gap: 28px; }   /* years stack */
 }
