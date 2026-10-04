@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="icon" type="image/svg+xml" href="assets/images/paceline-icon.svg">
+            <a href="index.html" class="logo">
+            </a>
+         <title> 
+            About | Paceline
+         </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+    <!-- 1. TOP BAR -->
+  <div class="topbar">
+    <p>Free UK delivery over £75 · 30-day returns</p>
+    <p class="topbar-highlight">Autumn '26 — new arrivals dropping weekly</p>
+    <p>Store: Glasgow · EN / £ GBP</p>
+  </div>
+  <!-- 2. NAVBAR -->
+  <header class="site-header">
+    <a href="index.html" class="logo">PACELINE</a>
+
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Footwear</a></li>
+        <li><a href="#">Apparel</a></li>
+        <li><a href="#">Brands</a></li>
+        <li><a href="#">Sale</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <button aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      </button>
+      <button aria-label="Account">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+      </button>
+      <button aria-label="Cart, 2 items" class="cart-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h3l2 12h10l2-8H7"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+        <span class="cart-badge">2</span>
+      </button>
+    </div>
+  </header>
+  <main>
+    <!-- ABOUT: INTRO -->
+    <section class="page-hero">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li aria-current="page">About</li>
+    </ol>
+    </nav>
+   <h1 class="page-title">Our Story</h1>
+   <p class="page-intro">
+    We opened Paceline in 2015 with one goal — to build the running shop we'd
+    always wanted. A decade in, we're still hand-picking every shoe, every
+    layer and every accessory for runners just like us.
+   </p>
+   </section>
+
+   <!-- Wide image: this is near the top of the page, so NO lazy loading -->
+   <div class="page-banner">
+   <img src="assets/images/about-hero.jpg" alt="Runners' feet at the start of a city race" width="1600" height="700">
+   </div>
+
+   <!-- ABOUT: 01 WHY WE EXIST -->
+   <section class="section split" aria-labelledby="why-title">
+   <div>
+    <p class="section-label">01 · Why we exist</p>
+    <h2 class="section-title" id="why-title">We're all<br>about the run.</h2>
+   </div>
+
+   <div class="split-text">
+    <p>
+      If your aim is 5K or 26.2 miles, on road or trail, we're here to
+      prepare, empower and equip you — from your first training run through to
+      race-day. Our tried-and-tested range covers road, trail, track and field,
+      apparel and accessories, with zero compromise on performance or style.
+    </p>
+    <p>
+      Paceline is small and independent, but the community around it is
+      anything but. We run our own weekly club, host free gait analysis, and
+      partner with local charities so 20% of profits from kids' kits go to
+      Girls Run Glasgow.
+    </p>
+    <p>Whatever mile you're on, we want to be your shop. Come say hello.</p>
+    <p class="signoff">— Rae &amp; Jamie, Founders</p>
+   </div>
+   </section>
+  </main>
+  <!-- 8. NEWSLETTER + FOOTER -->
+  <footer class="site-footer">
+
+    <!-- Newsletter strip: JavaScript will validate it tomorrow -->
+    <div class="newsletter">
+      <div>
+        <h2>Join the Paceline club.</h2>
+        <p>Early access to new drops, race-day tips, and 10% off your first order.</p>
+      </div>
+
+      <form class="newsletter-form" id="newsletter-form" novalidate>
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input type="email" id="newsletter-email" name="email" placeholder="your@email.com" autocomplete="email" required>
+        <button type="submit">Subscribe</button>
+        <p class="newsletter-msg" id="newsletter-msg" role="status"></p>
+      </form>
+    </div>
+
+    <!-- Main footer: brand + 4 link columns -->
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">PACELINE</a>
+        <p>Race-day gear, trail-tested essentials, and everyday running kit — curated in Glasgow since 2015.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Shop">
+        <h2>Shop</h2>
+        <ul>
+          <li><a href="#">Men's</a></li>
+          <li><a href="#">Women's</a></li>
+          <li><a href="#">Footwear</a></li>
+          <li><a href="#">Apparel</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Help">
+        <h2>Help</h2>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Size Guides</a></li>
+          <li><a href="#">Gait Analysis</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Company">
+        <h2>Company</h2>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Store · Glasgow</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Wholesale</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Follow us">
+        <h2>Follow</h2>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Strava</a></li>
+          <li><a href="#">TikTok</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p>© 2026 Paceline Running Co. — All rights reserved.</p>
+      <ul>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+
+  </footer>
+</body>
+</html>

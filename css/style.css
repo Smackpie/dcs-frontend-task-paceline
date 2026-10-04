@@ -621,6 +621,77 @@ a:focus-visible, button:focus-visible {
   display: flex;
   gap: 20px;
 }
+/* ===== 16. ABOUT PAGE: INTRO ===== */
+.page-hero {
+  text-align: center;
+  padding: 40px 40px 48px;
+}
+
+.breadcrumb ol {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5f5f5a;                     /* grey with enough contrast on cream */
+}
+
+.breadcrumb li + li::before {         /* adds a "/" before every item except the first */
+  content: "/";
+  margin-right: 8px;
+}
+
+.breadcrumb a:hover { color: var(--orange); }
+
+.page-title {
+  font-size: clamp(64px, 13vw, 168px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 24px 0;
+}
+
+.page-intro {
+  max-width: 48ch;                    /* comfortable line length */
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #4a4a46;
+}
+
+.page-banner { padding: 0 40px; }
+
+.page-banner img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 21 / 9;               /* wide, cinematic crop */
+  object-fit: cover;
+}
+
+/* ===== 17. ABOUT PAGE: TWO-COLUMN SPLIT ===== */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;   /* heading column + wider text column */
+  gap: 64px;
+  align-items: start;                 /* both columns start at the top */
+}
+
+.split-text p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4a4a46;
+  max-width: 60ch;
+  margin-bottom: 20px;
+}
+
+.signoff {
+  font-weight: 700;
+  color: var(--black);
+}
+
+/* Highlight the current page in the navbar */
+.nav-links a[aria-current="page"] { font-weight: 800; }
 
 /* ===== Responsive: tablet and phone ===== */
 @media (max-width: 1024px) {
@@ -631,7 +702,7 @@ a:focus-visible, button:focus-visible {
   .story-content { padding: 56px 40px; }
   .footer-main { grid-template-columns: repeat(2, 1fr); }   /* 2 link columns */
   .footer-brand { grid-column: 1 / -1; }                    /* brand spans the full row */
-
+  .split { grid-template-columns: 1fr; gap: 24px; }   /* stack heading above text */
 }
 
 @media (max-width: 640px) {
@@ -645,6 +716,9 @@ a:focus-visible, button:focus-visible {
   .story-stats { gap: 24px; flex-wrap: wrap; }
   .gender-grid { grid-template-columns: 1fr; }   /* stack the cards on phones */
   .gender-info { left: 16px; right: 16px; bottom: 16px; }
-   .site-footer { padding: 48px 16px 24px; }
+  .site-footer { padding: 48px 16px 24px; }
   .newsletter-form { flex-basis: 100%; max-width: none; }
+  .page-hero { padding: 32px 16px 36px; }
+  .page-banner { padding: 0 16px; }
+  .page-banner img { aspect-ratio: 4 / 3; }           /* taller crop on phones */
 }
